@@ -1,17 +1,36 @@
-# In class, we have made a simple turtle program that draws a square.
-# The python file (draw_square.py) for this program is included in the repository for your reference.
-# So the homework is to make a triangle in python turtle module, using the functions we learned in class.
+# Homework:
+# In the lesson, we made a simple hangman game. But there is no way to lose, as there is no strikes.
+# TODO: implement a strike system of 8 strikes. Once the player guesses the incorrect letter 8 times, they lose
+# Some hints have been given to you in the file
+# a website you can use for running the code is: https://www.w3schools.com/python/trypython.asp?filename=demo_compiler
 
-# TODO: edit this file to make a triangle of any colour or size you like
-# Since we use a new module called turtle, regular python compiler websites (like online-python.com) will not work.
-# Please test your script in turtle supported online python environments, like
-# "https://pythonsandbox.com/turtle"
-# or "https://trinket.io/turtle"
-# or "https://stepindev.com/en/py-playground"
+import random
+word_list = ["lion","tiger","elephant","giraffe","zebra","kangaroo","koala","panda","penguin","dolphin","whale","shark","eagle","owl","wolf","fox","bear","cheetah","crocodile","gorilla"]
+word = random.choice(word_list)
+display = ["_"] * len(word)
 
+# hint
+strike_count = 8  # total strike count
+current_strike = 0  # how many strikes the player currently has
 
-import turtle
+while "_" in display and current_strike < 8:
+    # ask player for a letter and see if it matches to any in the word
+    print("Word is: ", end = "")
+    for letter in display:
+        print(letter, end = " ")
 
+    print() # so that the "Enter the next letter" message begins with a new line
+    letter = input("Enter the next letter: ")
+    
+    letter_found = False  # TODO: make this true if a letter is found. After the following "for loop", if
+    # letter_found is false, increase the strike count. If letter_found is true, don't increase.
+    for i in range(len(word)):
+        if word[i] == letter:
+            display[i] = letter
+
+# TODO: only print the correct word if the player didn't lose
+print("You got it!")
+print("The word is " + word)
 
 
 
