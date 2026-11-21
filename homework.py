@@ -2,10 +2,11 @@
 # In the lesson, we made a simple hangman game. But there is no way to lose, as there is no strikes.
 # TODO: implement a strike system of 8 strikes. Once the player guesses the incorrect letter 8 times, they lose
 # Some hints have been given to you in the file
-# a website you can use for running the code is: https://www.w3schools.com/python/trypython.asp?filename=demo_compiler
+# w3school python compiler sometimes doesn't work for user inputs. A website you can use for running the code is: https://www.online-python.com/
 
 import random
-word_list = ["lion","tiger","elephant","giraffe","zebra","kangaroo","koala","panda","penguin","dolphin","whale","shark","eagle","owl","wolf","fox","bear","cheetah","crocodile","gorilla"]
+word_list = ["lion","tiger","elephant","giraffe","zebra","kangaroo","koala","panda",
+"penguin","dolphin","whale","shark","eagle","owl","wolf","fox","bear","cheetah","crocodile","gorilla"]
 word = random.choice(word_list)
 display = ["_"] * len(word)
 
@@ -31,7 +32,6 @@ while "_" in display and current_strike < 8:
 # TODO: only print the correct word if the player didn't lose
 print("You got it!")
 print("The word is " + word)
-
 
 
 
