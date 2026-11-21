@@ -31,8 +31,12 @@ while "_" in display and current_strike < 8:
 
 # TODO: only print the correct word if the player didn't lose
 print("You got it!")
-print("The word is " + word)
-
+print("The word is " + word
+      
+for i in range(len(word)):
+        if word[i] == letter:
+            display[i] = letter
+            letter_found = True
 
 
 
